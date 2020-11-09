@@ -25,7 +25,6 @@ module vga_top(
 	input ClkPort,
 	input BtnC,
 	input BtnU,
-	input BtnD,
 	//VGA signal
 	output hSync, vSync,
 	output [3:0] vgaR, vgaG, vgaB,
@@ -41,7 +40,7 @@ module vga_top(
 	wire bright;
 	wire[9:0] hc, vc;
 	wire[15:0] score;
-	wire up;
+	wire up,down;
 	wire [3:0] anode;
 	wire [11:0] rgb;
 	wire rst;
@@ -62,7 +61,7 @@ module vga_top(
 	wire move_clk;
 	assign move_clk=DIV_CLK[19]; //slower clock to drive the movement of objects on the vga screen
 	display_controller dc(.clk(ClkPort), .hSync(hSync), .vSync(vSync), .bright(bright), .hCount(hc), .vCount(vc));
-	block_controller sc(.clk(move_clk), .bright(bright), .rst(BtnC), .up(BtnU), .hCount(hc), .vCount(vc), .rgb(rgb), .score(score));
+	block_controller sc(.clk(move_clk), .bright(bright), .rst(BtnC), .up(BtnU), .down(BtnD), .hCount(hc), .vCount(vc), .rgb(rgb), .score(score));
 	
 	assign vgaR = rgb[11 : 8];
 	assign vgaG = rgb[7  : 4];
