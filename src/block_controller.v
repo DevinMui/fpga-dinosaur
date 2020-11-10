@@ -35,6 +35,20 @@ module block_controller(
 	GAME = 3'b010, // Play the game
 	DONE = 3'b100; // Game over
 	
+	
+
+	// game messages (start, game over)
+	assign start_msg_fill = state==INI && show_msg <= flash && 250-size/2 <= vCount && vCount <= 250+size/2 && 450-size/2 <= hCount && hCount <= 450+size/2;
+	// display F
+	assign end_msg_fill_1 = state==DONE && show_msg <= flash && 250-size <= vCount && vCount <= 250+size && 450-size/4 <= hCount && hCount <= 450+size/4;
+	assign end_msg_fill_2 = state==DONE && show_msg <= flash && 250-size <= vCount && vCount <= 250-2*size/3 && 450-size/4 <= hCount && hCount <= 450+size;
+	assign end_msg_fill_3 = state==DONE && show_msg <= flash && 250-size/3 <= vCount && vCount <= 250 && 450-size/4 <= hCount && hCount <= 450+size;
+
+	// dinosaur will be at the bottom left
+	// obstacle will be at the bottom right
+	assign dinosaur_block_fill=state!=INI && vCount>=(ypos-size) && vCount<=(ypos) && hCount>=(200) && hCount<=(200+size);
+	assign obstacle_block_fill=state!=INI && vCount>=(515-size) && vCount<=(515) && hCount>=(xpos-size/2) && hCount<=(xpos+size/2);
+
 	always@ (*) begin
     	if(~bright )	//force black if not inside the display area
 			rgb = 12'b0000_0000_0000;
@@ -53,18 +67,6 @@ module block_controller(
 		else	
 			rgb = 12'b0000_0000_0000;
 	end
-
-	// game messages (start, game over)
-	assign start_msg_fill = state==INI && show_msg <= flash && 250-size/2 <= vCount && vCount <= 250+size/2 && 450-size/2 <= hCount && hCount <= 450+size/2;
-	// display F
-	assign end_msg_fill_1 = state==DONE && show_msg <= flash && 250-size <= vCount && vCount <= 250+size && 450-size/4 <= hCount && hCount <= 450+size/4;
-	assign end_msg_fill_2 = state==DONE && show_msg <= flash && 250-size <= vCount && vCount <= 250-2*size/3 && 450-size/4 <= hCount && hCount <= 450+size;
-	assign end_msg_fill_3 = state==DONE && show_msg <= flash && 250-size/3 <= vCount && vCount <= 250 && 450-size/4 <= hCount && hCount <= 450+size;
-
-	// dinosaur will be at the bottom left
-	// obstacle will be at the bottom right
-	assign dinosaur_block_fill=state!=INI && vCount>=(ypos-size) && vCount<=(ypos) && hCount>=(200) && hCount<=(200+size);
-	assign obstacle_block_fill=state!=INI && vCount>=(515-size) && vCount<=(515) && hCount>=(xpos-size/2) && hCount<=(xpos+size/2);
 	
 	always@(posedge clk, posedge rst) 
 	begin
