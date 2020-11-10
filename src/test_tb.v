@@ -28,8 +28,8 @@ module ee354_test_tb;
 	reg [9:0] hc;
 	reg [9:0] vc;
 
-	reg [11:0] rgb;
-	reg [15:0] score;
+	wire [11:0] rgb;
+	wire [15:0] score;
 
 	integer i;
 	integer j;
