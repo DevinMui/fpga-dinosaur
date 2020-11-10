@@ -5,7 +5,8 @@ module block_controller(
 	input bright,
 	input rst,
 	input up,
-	input [9:0] hCount, vCount,
+	input [9:0] hCount, 
+	input [9:0] vCount,
 	output reg [11:0] rgb,
 	output reg [15:0] score
    );

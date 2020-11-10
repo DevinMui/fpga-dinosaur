@@ -13,7 +13,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 `timescale 1ns / 1ps
 
-module ee354_GCD_CEN_tb_v;
+module ee354_test_tb;
 
 	// Inputs
 	/*reg Clk, CEN;
@@ -24,8 +24,15 @@ module ee354_GCD_CEN_tb_v;
 	reg [7:0] Bin;*/
 
 	reg move_clk;
-	reg [1:0] BtnU;
+	reg [1:0] up;
+	reg [9:0] hc;
+	reg [9:0] vc;
+
+	reg [11:0] rgb;
+	reg [15:0] score;
+
 	integer i;
+	integer j;
 	//integer size = 50;
 
 	// Outputs
@@ -37,7 +44,7 @@ module ee354_GCD_CEN_tb_v;
 	reg [6*8:0] state_string; // 6-character string for symbolic display of state
 	integer clk_cnt, start_clock_cnt,clocks_taken;*/
 
-	reg [15:0] score;
+	
 	// Instantiate the Unit Under Test (UUT)
 
 	block_controller sc(
@@ -45,7 +52,6 @@ module ee354_GCD_CEN_tb_v;
 		.bright(bright), 
 		.rst(BtnC), 
 		.up(BtnU), 
-		.down(BtnD), 
 		.hCount(hc), 
 		.vCount(vc), 
 		.rgb(rgb), 
@@ -84,33 +90,36 @@ module ee354_GCD_CEN_tb_v;
 		@(posedge move_clk); //wait until we get a posedge in the Clk signal
 		@(posedge move_clk);
 		#1;
-		BtnU=1;
+		up=1;
 		@(posedge move_clk);
 		#1;
-		BtnU=0;
+		up=0;
 		
 		
 		//make start signal active for one clock
 		@(posedge move_clk);
 		#1;
-		BtnU=1;
+		up=1;
 		@(posedge move_clk);
 		#1;
-		BtnU=0;
+		up=0;
 		//leaving the q_I state, so start keeping track of the clocks taken
+
+		
+		j <= 0;
 		for(i = 0; i < 5; i = i + 1)
 			begin
 				if(!(200 <= sc.xpos && sc.xpos <= 200 + sc.size &&
 						515 - sc.size <= sc.ypos && sc.ypos <= 515
-					)) 
+					) && (j == 0)) 
 					begin
-						BtnU = 1;
+						up = 1;
 						@(posedge move_clk);
 						#1;
-						BtnU = 0;
+						up = 0;
 
 						if(sc.state == sc.DONE)
-							break;
+							j <= 1;
 					end
 			end
 
@@ -119,10 +128,10 @@ module ee354_GCD_CEN_tb_v;
 		$display("Blocks Jumped: %d ", score);
 		//$display("It took %d clock(s) to compute the GCD", clocks_taken);
 		//keep Ack signal high for one clock
-		BtnU=1;
+		up=1;
 		@(posedge move_clk);
 		#1;
-		BtnU=0;
+		up=0;
 		
 		
 		/*//Second stimulus (5,15)
