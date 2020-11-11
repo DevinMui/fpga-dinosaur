@@ -25,13 +25,13 @@ module ee354_test_tb;
 
 	reg move_clk;
 	reg [1:0] up;
-        reg [3:0] state;
 	reg rst;
 	reg [9:0] hc;
 	reg [9:0] vc;
 
 	wire [11:0] rgb;
 	wire [15:0] score;
+        wire [3:0] state;
 
 	integer i;
 	reg j;

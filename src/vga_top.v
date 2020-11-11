@@ -37,7 +37,7 @@ module vga_top(
 	);
 	wire Reset;
 	assign Reset=BtnC;
-        reg [3:0] state;
+        wire [3:0] state;
 	wire bright;
 	wire[9:0] hc, vc;
 	wire[15:0] score;
