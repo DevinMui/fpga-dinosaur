@@ -124,7 +124,7 @@ module ee354_test_tb;
 		$display("State: %d", sc.state);
 		$display("Start");
 		//for(i = 0; i < 5; i = i + 1)
-		while(sc.state != sc.DONE)
+		while(sc.state == sc.GAME)
 			begin
 				//$display("State: %d", sc.state);
 				/*if(!(200 <= sc.xpos && sc.xpos <= 200 + sc.size &&
