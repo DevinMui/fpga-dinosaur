@@ -101,16 +101,22 @@ module ee354_test_tb;
 		
 		
 		//make start signal active for one clock
-		/*@(posedge move_clk);
+		@(posedge move_clk);
 		#1;
 		up=1;
 		@(posedge move_clk);
 		#1;
-		up=0;*/
+		up=0;
 		//leaving the q_I state, so start keeping track of the clocks taken
 
 		//#5000000;
 		wait(sc.state == sc.INI);
+		@(posedge move_clk);
+		#1;
+		up=1;
+		@(posedge move_clk);
+		#1;
+		up=0;
 
 
 		
