@@ -24,7 +24,8 @@ module ee354_test_tb;
 	reg [7:0] Bin;*/
 
 	reg move_clk;
-	reg [1:0] up;
+	reg [2:0] up;
+	reg rst;
 	reg [9:0] hc;
 	reg [9:0] vc;
 
@@ -32,7 +33,8 @@ module ee354_test_tb;
 	wire [15:0] score;
 
 	integer i;
-	integer j;
+	reg j;
+	integer k;
 	integer file;
 	//integer size = 50;
 
@@ -51,8 +53,8 @@ module ee354_test_tb;
 	block_controller sc(
 		.clk(move_clk), 
 		.bright(bright), 
-		.rst(BtnC), 
-		.up(BtnU), 
+		.rst(rst), 
+		.up(Up), 
 		.hCount(hc), 
 		.vCount(vc), 
 		.rgb(rgb), 
@@ -65,7 +67,7 @@ module ee354_test_tb;
 		initial begin
 		// Initialize Inputs
 		//clk_cnt=0;
-		file = $fopen("ee354_gcd_Part3_output.txt", "w");
+		file = $fopen("ee354_final_project_output.txt", "w");
 		move_clk = 0;
 		//CEN = 1; // ****** in Part 2 ******
 				 // Here, in Part 1, we are enabling clock permanently by making CEN a '1' constantly.
@@ -92,26 +94,34 @@ module ee354_test_tb;
 		@(posedge move_clk); //wait until we get a posedge in the Clk signal
 		@(posedge move_clk);
 		#1;
-		up=1;
+		rst=1;
 		@(posedge move_clk);
 		#1;
-		up=0;
+		rst=0;
 		
 		
 		//make start signal active for one clock
-		@(posedge move_clk);
+		/*@(posedge move_clk);
 		#1;
 		up=1;
 		@(posedge move_clk);
 		#1;
-		up=0;
+		up=0;*/
 		//leaving the q_I state, so start keeping track of the clocks taken
 
+		//#5000000;
+		wait(sc.state == sc.INI);
+
+
 		
-		j <= 0;
-		for(i = 0; i < 5; i = i + 1)
+		k = 0;
+		$display("State: %d", sc.state);
+		$display("Start");
+		//for(i = 0; i < 5; i = i + 1)
+		while(sc.state != sc.DONE)
 			begin
-				if(!(200 <= sc.xpos && sc.xpos <= 200 + sc.size &&
+				$display("State: %d", sc.state);
+				/*if(!(200 <= sc.xpos && sc.xpos <= 200 + sc.size &&
 						515 - sc.size <= sc.ypos && sc.ypos <= 515
 					) && (j == 0)) 
 					begin
@@ -119,16 +129,34 @@ module ee354_test_tb;
 						@(posedge move_clk);
 						#1;
 						up = 0;
+						//k <= k + 1;
 
-						if(sc.state == sc.DONE)
-							j <= 1;
-					end
+						//if(sc.state == sc.DONE)
+						//	begin
+						//		j = 1;
+						//		$display("J: %d", j);
+						//		$display("Score: %d", sc.score);
+						//		//$fwrite(file "Blocks Jumped: %d Score: %d", k, sc.score);
+						//		$fclose(file);
+						//	end
+							//break;
+					end*/
+					up = 1;
+					@(posedge move_clk);
+					#1;
+					up = 0;
+					k = k + 1;
 			end
 
 		//wait(sc.state == sc.DONE); //wait until q_Done signal is a 1
 		#1;
-		$display("Blocks Jumped: %d ", sc.score);
-		$fwrite(file,"Blocks Jumped: ", sc.score);
+		$display("State: %d", sc.state);
+		$display("Blocks Jumped: %d Score: %d", k, sc.score);
+		$fwrite(file, "Blocks Jumped: %d Score: %d", k, sc.score);
+		$fclose(file);
+		$display("Finished");
+		
+		
 		//$display("It took %d clock(s) to compute the GCD", clocks_taken);
 		//keep Ack signal high for one clock
 		up=1;
@@ -161,7 +189,7 @@ module ee354_test_tb;
 		Ack = 0;*/
 		
 		#20;
-		$fclose(file);					
+							
 		
 
 	end
