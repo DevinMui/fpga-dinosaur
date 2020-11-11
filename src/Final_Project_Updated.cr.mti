@@ -10,7 +10,14 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 ** Error: C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/block_controller.v(149): (vlog-2110) Illegal reference to net "state".
 
 
-} {4.0 5.0 6.0 7.0 8.0 9.0 10.0 11.0} {}} {C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/display_controller.v} {1 {vlog -work work -stats=none {C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/display_controller.v}
+} {4.0 5.0 6.0 7.0 8.0 9.0 10.0 11.0} {}} {C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/vga_top.v} {1 {vlog -work work -stats=none {C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/vga_top.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module vga_top
+
+Top level modules:
+	vga_top
+
+} {} {}} {C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/display_controller.v} {1 {vlog -work work -stats=none {C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/display_controller.v}
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module display_controller
 
