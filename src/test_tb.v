@@ -33,6 +33,7 @@ module ee354_test_tb;
 
 	integer i;
 	integer j;
+	integer file;
 	//integer size = 50;
 
 	// Outputs
@@ -64,6 +65,7 @@ module ee354_test_tb;
 		initial begin
 		// Initialize Inputs
 		//clk_cnt=0;
+		file = $fopen("ee354_gcd_Part3_output.txt", "w");
 		move_clk = 0;
 		//CEN = 1; // ****** in Part 2 ******
 				 // Here, in Part 1, we are enabling clock permanently by making CEN a '1' constantly.
@@ -123,9 +125,10 @@ module ee354_test_tb;
 					end
 			end
 
-		wait(sc.state == sc.DONE); //wait until q_Done signal is a 1
+		//wait(sc.state == sc.DONE); //wait until q_Done signal is a 1
 		#1;
-		$display("Blocks Jumped: %d ", score);
+		$display("Blocks Jumped: %d ", sc.score);
+		$fwrite(file,"Blocks Jumped: ", sc.score);
 		//$display("It took %d clock(s) to compute the GCD", clocks_taken);
 		//keep Ack signal high for one clock
 		up=1;
@@ -157,7 +160,8 @@ module ee354_test_tb;
 		@(posedge Clk);
 		Ack = 0;*/
 		
-		#20;					
+		#20;
+		$fclose(file);					
 		
 
 	end
