@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src
 vblock_controller
-Z1 !s110 1605124724
+Z1 !s110 1605125208
 !i10b 1
 !s100 gD8OknX7`9<2Z0kUH3PQD0
 I2;3bgRGl=bJBZejPZS4YN0
@@ -23,7 +23,7 @@ Z3 OP;L;10.4a;61
 r1
 !s85 0
 31
-Z4 !s108 1605124724.000000
+Z4 !s108 1605125208.000000
 !s107 C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/block_controller.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/block_controller.v|
 !s101 -O0
@@ -75,11 +75,11 @@ nee354_@g@c@d_@c@e@n_tb_v
 vee354_test_tb
 R1
 !i10b 1
-!s100 Xj:jS>5e4U]hZZn18inHz3
-I5L7N;GKDS67^Klan_37F_3
+!s100 ;?=<3P]E8=TT^[jS@cnb:2
+IeUoXmLWRoZ`=EUme<iDe13
 R2
 R0
-w1605124717
+w1605125204
 R7
 R8
 R9

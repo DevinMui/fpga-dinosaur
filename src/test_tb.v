@@ -24,7 +24,7 @@ module ee354_test_tb;
 	reg [7:0] Bin;*/
 
 	reg move_clk;
-	reg [1:0] up;
+	reg up;
 	reg rst;
 	reg [9:0] hc;
 	reg [9:0] vc;
@@ -64,7 +64,10 @@ module ee354_test_tb;
 		.vCount(vc), 
 		.rgb(rgb), 
 		.score(score),
-                .state(state)
+                //.state(state)
+                .q_I(q_I),
+                .q_Game(q_Game),
+                .q_Done(q_Done)
 		);
 		
 		
@@ -129,7 +132,7 @@ module ee354_test_tb;
 
 		
 		k = 0;
-		$display("State: %d", state);
+		//$display("State: %d", state);
 		$display("Start");
 		//for(i = 0; i < 5; i = i + 1)
 		//while(state == 3'b010)
@@ -165,7 +168,7 @@ module ee354_test_tb;
 
 		//wait(sc.state == sc.DONE); //wait until q_Done signal is a 1
 		#1;
-		$display("State: %d", state);
+		//$display("State: %d", state);
 		$display("Blocks Jumped: %d Score: %d", k, score);
 		$fwrite(file, "Blocks Jumped: %d Score: %d", k, score);
 		$fclose(file);
