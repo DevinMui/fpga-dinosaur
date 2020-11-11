@@ -28,10 +28,14 @@ module ee354_test_tb;
 	reg rst;
 	reg [9:0] hc;
 	reg [9:0] vc;
+	reg [6*8:0] state_string; // 6-character string for symbolic display of state
 
 	wire [11:0] rgb;
 	wire [15:0] score;
-        wire [3:0] state;
+        //wire [3:0] state;
+        wire q_I;
+		wire q_Game;
+		wire q_Done;
 
 	integer i;
 	reg j;
@@ -113,7 +117,8 @@ module ee354_test_tb;
 
 		//#5000000;
                 // wait for ini
-		wait(state == 3'b001);
+		//wait(state == 3'b001);
+		wait(q_I);
 		@(posedge move_clk);
 		#1;
 		up=1;
@@ -127,7 +132,8 @@ module ee354_test_tb;
 		$display("State: %d", state);
 		$display("Start");
 		//for(i = 0; i < 5; i = i + 1)
-		while(state == 3'b010)
+		//while(state == 3'b010)
+		while(q_Game)
 			begin
 				//$display("State: %d", sc.state);
 				/*if(!(200 <= sc.xpos && sc.xpos <= 200 + sc.size &&
@@ -202,15 +208,14 @@ module ee354_test_tb;
 
 	end
 	
-	/*always @(*)
+	always @(*)
 		begin
-			case ({q_I, q_Sub, q_Mult, q_Done})    // Note the concatenation operator {}
-				4'b1000: state_string = "q_I   ";  // ****** TODO ******
-				4'b0100: state_string = "q_Sub ";  // Fill-in the three lines
-				4'b0010: state_string = "q_Mult";
-				4'b0001: state_string = "q_Done";			
+			case ({q_I, q_Game, q_Done})    // Note the concatenation operator {}
+				3'b100: state_string = "q_I   ";  // ****** TODO ******
+				3'b010: state_string = "q_Game ";  // Fill-in the three lines
+				3'b001: state_string = "q_Done";			
 			endcase
-		end*/
+		end
  
       
 endmodule

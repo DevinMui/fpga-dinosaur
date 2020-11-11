@@ -9,59 +9,59 @@ z2
 cModel Technology
 Z0 dC:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src
 vblock_controller
-!s110 1605093072
+Z1 !s110 1605124724
 !i10b 1
-!s100 onD;zKKaK5]@F<R6g:^Tc1
-IC@d>Qg_eE[3`nD0Xin[0i2
-Z1 VDg1SIo80bB@j0V0VzS_@n1
+!s100 gD8OknX7`9<2Z0kUH3PQD0
+I2;3bgRGl=bJBZejPZS4YN0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1605093064
+w1605124287
 8C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/block_controller.v
 FC:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/block_controller.v
 L0 3
-Z2 OP;L;10.4a;61
+Z3 OP;L;10.4a;61
 r1
 !s85 0
 31
-!s108 1605093072.000000
+Z4 !s108 1605124724.000000
 !s107 C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/block_controller.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/block_controller.v|
 !s101 -O0
 !i113 1
-Z3 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+Z5 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
 vdisplay_controller
-Z4 !s110 1605093439
+R1
 !i10b 1
 !s100 McTjh6oFD?X9i2YYJ4CJQ3
 IjHJ?6hWJ^IE>I8X6zYe>T0
-R1
+R2
 R0
 w1604974405
 8C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/display_controller.v
 FC:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/display_controller.v
-Z5 L0 24
-R2
+Z6 L0 24
+R3
 r1
 !s85 0
 31
-Z6 !s108 1605093439.000000
+R4
 !s107 C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/display_controller.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/display_controller.v|
 !s101 -O0
 !i113 1
-R3
+R5
 vee354_GCD_CEN_tb_v
 !s110 1605041111
 !i10b 1
 !s100 PLB;GmBUKU4AB8bWc;QU`1
 IHSzUR_[VcfzXbTfajcJ]63
-R1
+R2
 R0
 w1605000552
 Z7 8C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/test_tb.v
 Z8 FC:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/test_tb.v
 Z9 L0 16
-R2
+R3
 r1
 !s85 0
 31
@@ -70,47 +70,47 @@ Z10 !s107 C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinos
 Z11 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/test_tb.v|
 !s101 -O0
 !i113 1
-R3
+R5
 nee354_@g@c@d_@c@e@n_tb_v
 vee354_test_tb
-R4
-!i10b 1
-!s100 jCPnHV]oQhc@b@XEDGVQ@3
-ITU=nQCk^>[jC`^^GbYSi92
 R1
+!i10b 1
+!s100 Xj:jS>5e4U]hZZn18inHz3
+I5L7N;GKDS67^Klan_37F_3
+R2
 R0
-w1605093388
+w1605124717
 R7
 R8
 R9
-R2
+R3
 r1
 !s85 0
 31
-R6
+R4
 R10
 R11
 !s101 -O0
 !i113 1
-R3
+R5
 vvga_top
-R4
-!i10b 1
-!s100 Cl<YRM_H8kVGe:_l4cFOW1
-Id?V:A2MNzzAaD0SL3738]0
 R1
+!i10b 1
+!s100 TT^NA23kC<4iHCDLSXgE?3
+ISBedJ_bin7o[]<8PH?EaD3
+R2
 R0
-w1605093432
+w1605124331
 8C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/vga_top.v
 FC:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/vga_top.v
-R5
-R2
+R6
+R3
 r1
 !s85 0
 31
-R6
+R4
 !s107 C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/vga_top.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/vga_top.v|
 !s101 -O0
 !i113 1
-R3
+R5

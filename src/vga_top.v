@@ -38,6 +38,10 @@ module vga_top(
 	wire Reset;
 	assign Reset=BtnC;
         wire [3:0] state;
+        wire q_I;
+		wire q_Game;
+		wire q_Done;
+
 	wire bright;
 	wire[9:0] hc, vc;
 	wire[15:0] score;

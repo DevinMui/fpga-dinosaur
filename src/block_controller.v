@@ -9,7 +9,10 @@ module block_controller(
 	input [9:0] vCount,
 	output reg [11:0] rgb,
 	output reg [15:0] score,
-        output wire [3:0] state
+        //output wire [3:0] state
+        output q_I,
+        output q_Done,
+        output q_Game
    );
 	wire dinosaur_block_fill;
 	wire obstacle_block_fill;
@@ -23,6 +26,8 @@ module block_controller(
 	reg [5:0] show_msg;
 	reg can_jump;
 
+	reg[3:0] state;
+
 	integer size = 50;
 	integer flash = 15;
 	
@@ -30,6 +35,8 @@ module block_controller(
 	// the obstacle will be white
 	parameter RED   = 12'b1111_0000_0000;
 	parameter WHITE   = 12'b1111_1111_1111;
+
+	assign {q_Done, q_Game, q_I} = state;
 
 	localparam
 	INI = 3'b001, // Initialize the game
