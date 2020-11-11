@@ -9,11 +9,11 @@ module block_controller(
 	input [9:0] vCount,
 	output reg [11:0] rgb,
 	output reg [15:0] score
+        output reg [3:0] state;
    );
 	wire dinosaur_block_fill;
 	wire obstacle_block_fill;
 	
-	reg [3:0] state;
 	// xpos represents the obstacle
 	// ypos represents the dinosaur
 	// velocity represents gravity or the change in pos

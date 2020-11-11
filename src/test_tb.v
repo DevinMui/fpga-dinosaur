@@ -24,7 +24,8 @@ module ee354_test_tb;
 	reg [7:0] Bin;*/
 
 	reg move_clk;
-	reg [2:0] up;
+	reg [1:0] up;
+        reg [3:0] state;
 	reg rst;
 	reg [9:0] hc;
 	reg [9:0] vc;
@@ -54,11 +55,12 @@ module ee354_test_tb;
 		.clk(move_clk), 
 		.bright(bright), 
 		.rst(rst), 
-		.up(Up), 
+		.up(up), 
 		.hCount(hc), 
 		.vCount(vc), 
 		.rgb(rgb), 
-		.score(score)
+		.score(score),
+                .state(state)
 		);
 		
 		
@@ -110,7 +112,8 @@ module ee354_test_tb;
 		//leaving the q_I state, so start keeping track of the clocks taken
 
 		//#5000000;
-		wait(sc.state == sc.INI);
+                // wait for ini
+		wait(state == 3'b001);
 		@(posedge move_clk);
 		#1;
 		up=1;
@@ -121,10 +124,10 @@ module ee354_test_tb;
 
 		
 		k = 0;
-		$display("State: %d", sc.state);
+		$display("State: %d", state);
 		$display("Start");
 		//for(i = 0; i < 5; i = i + 1)
-		while(sc.state == sc.GAME)
+		while(state == 3'b010)
 			begin
 				//$display("State: %d", sc.state);
 				/*if(!(200 <= sc.xpos && sc.xpos <= 200 + sc.size &&
@@ -157,9 +160,9 @@ module ee354_test_tb;
 
 		//wait(sc.state == sc.DONE); //wait until q_Done signal is a 1
 		#1;
-		$display("State: %d", sc.state);
-		$display("Blocks Jumped: %d Score: %d", k, sc.score);
-		$fwrite(file, "Blocks Jumped: %d Score: %d", k, sc.score);
+		$display("State: %d", state);
+		$display("Blocks Jumped: %d Score: %d", k, score);
+		$fwrite(file, "Blocks Jumped: %d Score: %d", k, score);
 		$fclose(file);
 		$display("Finished");
 		
