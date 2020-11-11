@@ -126,7 +126,7 @@ module ee354_test_tb;
 		//for(i = 0; i < 5; i = i + 1)
 		while(sc.state != sc.DONE)
 			begin
-				$display("State: %d", sc.state);
+				//$display("State: %d", sc.state);
 				/*if(!(200 <= sc.xpos && sc.xpos <= 200 + sc.size &&
 						515 - sc.size <= sc.ypos && sc.ypos <= 515
 					) && (j == 0)) 
@@ -147,6 +147,7 @@ module ee354_test_tb;
 						//	end
 							//break;
 					end*/
+					@(posedge move_clk);
 					up = 1;
 					@(posedge move_clk);
 					#1;
