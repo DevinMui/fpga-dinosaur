@@ -7,10 +7,6 @@ Top level modules:
 
 } {} {}} {C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/vga_top.v} {1 {vlog -work work -stats=none {C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/vga_top.v}
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module vga_top
-
-Top level modules:
-	vga_top
 
 } {} {}} {C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/display_controller.v} {1 {vlog -work work -stats=none {C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/display_controller.v}
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015

@@ -1,1 +1,5 @@
+Unlimited Jumps
 Blocks Jumped:         136 Score:   271
+
+Limited Jumps(5)
+Blocks Jumped:           5 Score:    10

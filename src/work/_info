@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src
 vblock_controller
-Z1 !s110 1605125208
+Z1 !s110 1605138689
 !i10b 1
 !s100 gD8OknX7`9<2Z0kUH3PQD0
 I2;3bgRGl=bJBZejPZS4YN0
@@ -23,7 +23,7 @@ Z3 OP;L;10.4a;61
 r1
 !s85 0
 31
-Z4 !s108 1605125208.000000
+Z4 !s108 1605138689.000000
 !s107 C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/block_controller.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/block_controller.v|
 !s101 -O0
@@ -60,14 +60,14 @@ R0
 w1605000552
 Z7 8C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/test_tb.v
 Z8 FC:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/test_tb.v
-Z9 L0 16
+L0 16
 R3
 r1
 !s85 0
 31
 !s108 1605041111.000000
-Z10 !s107 C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/test_tb.v|
-Z11 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/test_tb.v|
+Z9 !s107 C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/test_tb.v|
+Z10 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/test_tb.v|
 !s101 -O0
 !i113 1
 R5
@@ -75,26 +75,26 @@ nee354_@g@c@d_@c@e@n_tb_v
 vee354_test_tb
 R1
 !i10b 1
-!s100 ;?=<3P]E8=TT^[jS@cnb:2
-IeUoXmLWRoZ`=EUme<iDe13
+!s100 lhDEoIO8fO;=MUZocGLz83
+ILbh]B4[C87P]`08<eP0WS3
 R2
 R0
-w1605125204
+w1605138653
 R7
 R8
-R9
+L0 3
 R3
 r1
 !s85 0
 31
 R4
+R9
 R10
-R11
 !s101 -O0
 !i113 1
 R5
 vvga_top
-R1
+!s110 1605137656
 !i10b 1
 !s100 TT^NA23kC<4iHCDLSXgE?3
 ISBedJ_bin7o[]<8PH?EaD3
@@ -108,7 +108,7 @@ R3
 r1
 !s85 0
 31
-R4
+!s108 1605137656.000000
 !s107 C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/vga_top.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/vga_top.v|
 !s101 -O0
