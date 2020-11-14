@@ -1,12 +1,9 @@
-{C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/block_controller.v} {1 {vlog -work work -stats=none {C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/block_controller.v}
+{C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/test_tb.v} {1 {vlog -work work -stats=none {C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/test_tb.v}
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module block_controller
+-- Compiling module ee354_test_tb
 
 Top level modules:
-	block_controller
-
-} {} {}} {C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/vga_top.v} {1 {vlog -work work -stats=none {C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/vga_top.v}
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+	ee354_test_tb
 
 } {} {}} {C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/display_controller.v} {1 {vlog -work work -stats=none {C:/Users/Edison Siu/Desktop/EE354_LAB/Final_Project_Updated/fpga-dinosaur/src/display_controller.v}
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
